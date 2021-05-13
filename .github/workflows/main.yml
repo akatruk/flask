@@ -2,7 +2,7 @@ name: Ci-cd to AWS ElasticBeanstalk
 env:
   EB_PACKAGE_S3_BUCKET_NAME: 's3-flask-app-packages1'
   EB_APPLICATION_NAME      : 'dbscaner'
-  EB_ENVIROMENT_NAME       : 'Prod'
+  EB_ENVIROMENT_NAME       : 'Dbscaner-env'
   DEPLOY_PACKAGE_NAME      : 'flask_app_${{ github.sha }}.zip'
   AWS_REGION_NAME          : 'eu-west-3'
 
