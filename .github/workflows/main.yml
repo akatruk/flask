@@ -58,14 +58,4 @@ jobs:
 
     - name: Deploy 
       run: aws elasticbeanstalk update-environment --venvironment-name ${{ env.EB_ENVIROMENT_NAME }} \
-      --version-label "Ver-${{ github.sha }}"
-
-    # - name: Print
-    #   run: echo "CI Pipeline part Success!"
-
-
-
-#       run: |
-#         docker run \
-#         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-#         jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
+        --version-label "Ver-${{ github.sha }}"
