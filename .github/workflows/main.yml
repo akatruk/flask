@@ -60,8 +60,8 @@ jobs:
       run: aws elasticbeanstalk update-environment --venvironment-name ${{ env.EB_ENVIROMENT_NAME }} \
       --version-label "Ver-${{ github.sha }}"
 
-    - name: Print
-      run: echo "CI Pipeline part Success!"
+    # - name: Print
+    #   run: echo "CI Pipeline part Success!"
 
 
 
