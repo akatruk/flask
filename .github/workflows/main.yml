@@ -57,5 +57,5 @@ jobs:
         --description "CoimmitSHA-${{ github.sha }}"
 
     - name: Deploy 
-      run: aws elasticbeanstalk update-environment --venvironment-name ${{ env.EB_ENVIROMENT_NAME }} \
+      run: aws elasticbeanstalk update-environment --environment-name ${{ env.EB_ENVIROMENT_NAME }} \
         --version-label "Ver-${{ github.sha }}"
