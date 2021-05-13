@@ -1,0 +1,28 @@
+name: Ci-cd to AWS ElasticBeanstalk
+env:
+  EB_PACKAGE_S3_BUCKET_NAME: 's3-flask-app-packages1'
+  EB_APPLICATION_NAME      : 'My Flask'
+  EB_ENVIROMENT_NAME       : 'Prod'
+  DEPLOY_PACKAGE_NAME      : 'flask_app_${{ github.sha }}.zip'
+  AWS_REGION_NAME          : 'eu-west-3'
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: CI
+      uses: actions/checkout@v2
+    
+    - name: CD 
+      run: zip -r ${{ env.DEPLOY_PACKAGE_NAME }} ./ -x *.git*
+#       run: |
+#         docker run \
+#         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
+#         jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
