@@ -7,7 +7,31 @@
     <title>My First Prject</title>
 </head>
 <body>
-    database version: {{ data[0][0] }}
-
+    <h4>
+        database version: {{ data[0][0] }}
+    </h4>
+    <h4>
+      uptime: {{ data3[0][0] }}
+  </h4>
+    <h4>
+      list Connections:
+    </h4>
+    <p>idle in transaction: This indicates the backend is in a transaction,
+       but it is currently not doing anything and could be waiting for an input from the end user</p>
+        <table border="1">
+        <tr>
+          {% for d in data1 %}
+          <tr> <td>{{ d[0] }} </td> <td>{{ d[1] }} </td> </tr>
+         {% endfor %}
+      </table>
+      <h4>
+        PostgreSQL Settings:
+      </h4>  
+      <table border="1">
+        <tr>
+          {% for d in data2 %}
+          <tr> <td>{{ d[0] }} </td> <td>{{ d[1] }} </td><td>{{ d[2] }} </td> <td>{{ d[3] }} </td>  </tr> 
+         {% endfor %}
+      </table>
 </body>
 </html>
